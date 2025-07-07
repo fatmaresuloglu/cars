@@ -21,6 +21,10 @@ export const lightTheme = {
     border: '#cccccc',
     notification: '#ff80ab',
   },
+  inputColors: {
+    background: '#ffffff',
+  },
+
   fonts: {
     regular: {fontFamily: 'Roboto', fontWeight: weight},
     medium: {fontFamily: 'Roboto-Medium', fontWeight: weight},
@@ -38,6 +42,9 @@ export const darkTheme = {
     text: '#ffffff',
     border: '#3a3a3a',
     notification: '#ff80ab',
+  },
+  inputColors: {
+    background: '#424242',
   },
 
   fonts: {

@@ -75,7 +75,11 @@ const Login = () => {
           <TextInput
             style={[
               styles.input,
-              {color: theme.colors.text, borderColor: theme.colors.border},
+              {
+                color: theme.colors.text,
+                borderColor: theme.colors.border,
+                backgroundColor: theme.inputColors.background,
+              },
             ]}
             placeholder={t.username}
             placeholderTextColor={theme.colors.text}
@@ -94,7 +98,11 @@ const Login = () => {
           <TextInput
             style={[
               styles.input,
-              {color: theme.colors.text, borderColor: theme.colors.border},
+              {
+                color: theme.colors.text,
+                borderColor: theme.colors.border,
+                backgroundColor: theme.inputColors.background,
+              },
             ]}
             placeholder={t.password}
             placeholderTextColor={theme.colors.text}
@@ -119,7 +127,7 @@ const Login = () => {
           style={[
             styles.buttonLanguage,
             {
-              backgroundColor: 'white',
+              backgroundColor: theme.inputColors.background,
               borderColor: theme.colors.border,
             },
           ]}>
@@ -187,7 +195,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderRadius: 5,
     textAlign: 'center',
-    backgroundColor: 'white',
   },
   label: {
     fontSize: 16,
@@ -197,7 +204,7 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    marginTop: 20,
+    marginTop: 5,
     marginBottom: 20,
     height: 40,
 
