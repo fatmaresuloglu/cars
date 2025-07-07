@@ -78,6 +78,7 @@ const Login = () => {
               {color: theme.colors.text, borderColor: theme.colors.border},
             ]}
             placeholder={t.username}
+            placeholderTextColor={theme.colors.text}
             value={username}
             onChangeText={setUsername}
           />
@@ -96,6 +97,7 @@ const Login = () => {
               {color: theme.colors.text, borderColor: theme.colors.border},
             ]}
             placeholder={t.password}
+            placeholderTextColor={theme.colors.text}
             secureTextEntry={true}
             value={password}
             onChangeText={setPassword}
@@ -117,7 +119,7 @@ const Login = () => {
           style={[
             styles.buttonLanguage,
             {
-              backgroundColor: theme.colors.card,
+              backgroundColor: 'white',
               borderColor: theme.colors.border,
             },
           ]}>
@@ -185,6 +187,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderRadius: 5,
     textAlign: 'center',
+    backgroundColor: 'white',
   },
   label: {
     fontSize: 16,
