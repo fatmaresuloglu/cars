@@ -62,6 +62,7 @@ const Login = () => {
           {
             backgroundColor: theme.colors.card,
             borderColor: theme.colors.border,
+            padding: 50,
           },
         ]}>
         <View style={styles.inputWrapper}>
