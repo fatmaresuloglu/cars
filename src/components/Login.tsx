@@ -4,6 +4,7 @@ import React, {useState} from 'react';
 import {
   ActivityIndicator,
   Alert,
+  Image,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -56,6 +57,25 @@ const Login = () => {
   return (
     <SafeAreaView
       style={[styles.container, {backgroundColor: theme.colors.background}]}>
+      <View style={{flexDirection: 'row', marginBottom: 20}}>
+        <Image
+          source={require('../../assets/icons/favicon.png')}
+          style={{
+            width: 90,
+            height: 90,
+          }}
+        />
+        <Text
+          style={{
+            color: theme.colors.text,
+            fontSize: 24,
+            fontWeight: 'bold',
+            marginLeft: 10,
+            alignSelf: 'center',
+          }}>
+          Stellar Teknoloji
+        </Text>
+      </View>
       <Card
         style={[
           styles.card,
