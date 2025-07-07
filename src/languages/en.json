@@ -1,0 +1,11 @@
+{
+  "login": "Login",
+  "username": "Username",
+  "password": "Password",
+  "Card1": "Card 1",
+  "Card2": "Card 2",
+  "Warning": "Warning",
+  "Error": "Error",
+  "WarningMessage1": "Username and password cannot be empty.",
+  "WarningMessage2": "Username or password is incorrect."
+}

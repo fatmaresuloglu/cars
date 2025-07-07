@@ -1,0 +1,11 @@
+{
+  "login": "Giriş",
+  "username": "Kullanıcı Adı",
+  "password": "Şifre",
+  "Card1": "Kart 1",
+  "Card2": "Kart 2",
+  "Warning": "Uyarı",
+  "Error": "Hata",
+  "WarningMessage1": "Kullanıcı adı ve şifre boş olamaz.",
+  "WarningMessage2": "Kullanıcı adı veya şifre yanlış."
+}
