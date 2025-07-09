@@ -1,6 +1,8 @@
 import {configureStore} from '@reduxjs/toolkit';
+
 import themeReducer from './slices/ThemeSlices';
 import languageReducer from './slices/languageSlice';
+
 import {api} from './slices/userSlice';
 
 export const store = configureStore({
@@ -10,7 +12,7 @@ export const store = configureStore({
     [api.reducerPath]: api.reducer,
   },
   middleware: getDefaultMiddleware =>
-    getDefaultMiddleware().concat(api.middleware),
+    getDefaultMiddleware({serializableCheck: false}).concat(api.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

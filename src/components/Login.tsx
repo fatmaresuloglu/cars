@@ -4,6 +4,7 @@ import React, {useState} from 'react';
 import {
   ActivityIndicator,
   Alert,
+  I18nManager,
   Image,
   SafeAreaView,
   StyleSheet,
@@ -14,6 +15,7 @@ import {
 } from 'react-native';
 import CountryFlag from 'react-native-country-flag';
 import {Button, Card} from 'react-native-paper';
+
 import {useAppDispatch, useAppSelector} from '../store/hooks';
 import {setLanguage} from '../store/slices/languageSlice';
 import {useLoginUserMutation} from '../store/slices/userSlice';
@@ -57,25 +59,31 @@ const Login = () => {
   return (
     <SafeAreaView
       style={[styles.container, {backgroundColor: theme.colors.background}]}>
-      <View style={{flexDirection: 'row', marginBottom: 20}}>
+      <View
+        style={{
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginBottom: 20,
+        }}>
         <Image
           source={require('../../assets/icons/favicon.png')}
           style={{
-            width: 90,
-            height: 90,
+            width: 50,
+            height: 50,
+            resizeMode: 'contain',
+            marginHorizontal: 10,
           }}
         />
         <Text
           style={{
             color: theme.colors.text,
-            fontSize: 24,
+            fontSize: 22,
             fontWeight: 'bold',
-            marginLeft: 10,
-            alignSelf: 'center',
           }}>
           Stellar Teknoloji
         </Text>
       </View>
+
       <Card
         style={[
           styles.card,
@@ -96,6 +104,7 @@ const Login = () => {
             style={[
               styles.input,
               {
+                textAlign: I18nManager.isRTL ? 'right' : 'left',
                 color: theme.colors.text,
                 borderColor: theme.colors.border,
                 backgroundColor: theme.inputColors.background,
@@ -110,7 +119,12 @@ const Login = () => {
 
         <View style={styles.inputWrapper}>
           {password && (
-            <Text style={[styles.floatingLabel, {color: theme.colors.text}]}>
+            <Text
+              style={[
+                styles.floatingLabel,
+                {textAlign: I18nManager.isRTL ? 'right' : 'left'},
+                {color: theme.colors.text},
+              ]}>
               {t.password}
             </Text>
           )}
@@ -119,6 +133,7 @@ const Login = () => {
             style={[
               styles.input,
               {
+                textAlign: I18nManager.isRTL ? 'right' : 'left',
                 color: theme.colors.text,
                 borderColor: theme.colors.border,
                 backgroundColor: theme.inputColors.background,
@@ -157,7 +172,7 @@ const Login = () => {
             contentStyle={{flexDirection: 'row', alignItems: 'center'}}>
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
               <Text style={{color: theme.colors.text}}>TR</Text>
-              <View style={{width: 10}} />
+              <View style={{width: 5}} />
               <CountryFlag isoCode="TR" size={18} />
             </View>
           </Button>
@@ -167,8 +182,18 @@ const Login = () => {
             contentStyle={{flexDirection: 'row', alignItems: 'center'}}>
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
               <Text style={{color: theme.colors.text}}>EN</Text>
-              <View style={{width: 10}} />
+              <View style={{width: 5}} />
               <CountryFlag isoCode="GB" size={18} />
+            </View>
+          </Button>
+          <Button
+            onPress={() => dispatch(setLanguage('ar'))}
+            labelStyle={{color: theme.colors.text}}
+            contentStyle={{flexDirection: 'row', alignItems: 'center'}}>
+            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+              <Text style={{color: theme.colors.text}}>AR</Text>
+              <View style={{width: 5}} />
+              <CountryFlag isoCode="AR" size={18} />
             </View>
           </Button>
         </View>
@@ -195,15 +220,16 @@ const styles = StyleSheet.create({
     position: 'relative',
     width: 250,
     marginBottom: 20,
+
+    flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
   },
 
   floatingLabel: {
     position: 'absolute',
     top: -25,
-    left: 10,
     fontSize: 18,
     backgroundColor: 'transparent',
-    zIndex: 1,
+    // zIndex: 1,
   },
 
   input: {
@@ -214,13 +240,12 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     paddingHorizontal: 10,
     borderRadius: 5,
-    textAlign: 'center',
   },
   label: {
     fontSize: 16,
     height: 20,
     marginBottom: 10,
-    textAlign: 'center',
+    textAlign: I18nManager.isRTL ? 'right' : 'left',
   },
 
   button: {

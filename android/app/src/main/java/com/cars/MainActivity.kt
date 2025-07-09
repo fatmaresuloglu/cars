@@ -5,18 +5,24 @@ import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
 import com.facebook.react.defaults.DefaultReactActivityDelegate
+import com.facebook.react.modules.i18nmanager.I18nUtil
 
 class MainActivity : ReactActivity() {
 
   override fun getMainComponentName(): String = "cars"
 
-  override fun createReactActivityDelegate(): ReactActivityDelegate =
-      DefaultReactActivityDelegate(this, mainComponentName, fabricEnabled)
+  override fun createReactActivityDelegate(): ReactActivityDelegate {
+    return DefaultReactActivityDelegate(this, mainComponentName, fabricEnabled)
+  }
 
-  // BU FONKSİYONU EKLİYORSUN 👇
   override fun onCreate(savedInstanceState: Bundle?) {
-      super.onCreate(null)
+    super.onCreate(null)
+
+    // RTL desteğini zorunlu olarak aç
+   // I18nUtil.getInstance().allowRTL(this, true)
+    //I18nUtil.getInstance().forceRTL(this, true)
   }
 }
+
 
 
