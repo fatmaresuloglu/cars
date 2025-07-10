@@ -6,7 +6,7 @@ import com.facebook.react.ReactActivityDelegate
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
 import com.facebook.react.defaults.DefaultReactActivityDelegate
 import com.facebook.react.modules.i18nmanager.I18nUtil
-
+import com.facebook.react.modules.i18nmanager.I18nUtil
 class MainActivity : ReactActivity() {
 
   override fun getMainComponentName(): String = "cars"
@@ -17,12 +17,17 @@ class MainActivity : ReactActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(null)
-
-    // RTL desteğini zorunlu olarak aç
-   // I18nUtil.getInstance().allowRTL(this, true)
-    //I18nUtil.getInstance().forceRTL(this, true)
   }
+
+
+override fun onCreate(savedInstanceState: Bundle?) {
+  super.onCreate(null)
+  I18nUtil.getInstance().allowRTL(this, true)
+  I18nUtil.getInstance().forceRTL(this, true)
 }
+
+  }
+
 
 
 

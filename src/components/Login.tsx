@@ -17,10 +17,10 @@ import CountryFlag from 'react-native-country-flag';
 import {Button, Card} from 'react-native-paper';
 
 import {useAppDispatch, useAppSelector} from '../store/hooks';
-import {setLanguage} from '../store/slices/languageSlice';
 import {useLoginUserMutation} from '../store/slices/userSlice';
 import {darkTheme, lightTheme} from '../theme/Theme';
 import {useTranslation} from '../translate/useTranslation';
+import {setLanguageAndDirection} from './denemeRTL';
 
 type RootStackParamList = {
   HomePage: undefined;
@@ -80,6 +80,7 @@ const Login = () => {
             color: theme.colors.text,
             fontSize: 24,
             fontWeight: 'bold',
+            // textAlign: I18nManager.isRTL ? 'right' : 'left',
           }}>
           Stellar Teknoloji
         </Text>
@@ -110,7 +111,6 @@ const Login = () => {
             style={[
               styles.input,
               {
-                // textAlign: I18nManager.isRTL ? 'right' : 'left',
                 color: theme.colors.text,
                 borderColor: theme.colors.border,
                 backgroundColor: theme.inputColors.background,
@@ -140,7 +140,6 @@ const Login = () => {
             style={[
               styles.input,
               {
-                //textAlign: I18nManager.isRTL ? 'right' : 'left',
                 color: theme.colors.text,
                 borderColor: theme.colors.border,
                 backgroundColor: theme.inputColors.background,
@@ -174,7 +173,7 @@ const Login = () => {
             },
           ]}>
           <Button
-            onPress={() => dispatch(setLanguage('tr'))}
+            onPress={() => setLanguageAndDirection('tr')}
             labelStyle={{color: theme.colors.text}}
             contentStyle={{flexDirection: 'row', alignItems: 'center'}}>
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -184,7 +183,7 @@ const Login = () => {
             </View>
           </Button>
           <Button
-            onPress={() => dispatch(setLanguage('en'))}
+            onPress={() => setLanguageAndDirection('en')}
             labelStyle={{color: theme.colors.text}}
             contentStyle={{flexDirection: 'row', alignItems: 'center'}}>
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -194,7 +193,7 @@ const Login = () => {
             </View>
           </Button>
           <Button
-            onPress={() => dispatch(setLanguage('ar'))}
+            onPress={() => setLanguageAndDirection('ar')}
             labelStyle={{color: theme.colors.text}}
             contentStyle={{flexDirection: 'row', alignItems: 'center'}}>
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -234,8 +233,6 @@ const styles = StyleSheet.create({
     top: -25,
     fontSize: 18,
     backgroundColor: 'transparent',
-
-    // zIndex: 1,
   },
 
   input: {
