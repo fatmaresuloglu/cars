@@ -8,7 +8,6 @@ const RTLToggle = () => {
   const toggleRTL = () => {
     const newRTL = !isRTL;
 
-    // RTL yönünü değiştir
     I18nManager.allowRTL(newRTL);
     I18nManager.forceRTL(newRTL);
     setIsRTL(newRTL);

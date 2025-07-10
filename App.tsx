@@ -23,7 +23,10 @@ const AppContent = () => {
   const theme = isDark ? darkTheme : lightTheme;
 
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView
+      style={{
+        flex: 1,
+      }}>
       <RTLToggle />
 
       <NavigationContainer theme={theme}>

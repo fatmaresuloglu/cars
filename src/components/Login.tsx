@@ -61,6 +61,7 @@ const Login = () => {
       style={[styles.container, {backgroundColor: theme.colors.background}]}>
       <View
         style={{
+          flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
           alignItems: 'center',
           justifyContent: 'center',
           marginBottom: 20,
@@ -68,8 +69,8 @@ const Login = () => {
         <Image
           source={require('../../assets/icons/favicon.png')}
           style={{
-            width: 50,
-            height: 50,
+            width: 90,
+            height: 90,
             resizeMode: 'contain',
             marginHorizontal: 10,
           }}
@@ -77,7 +78,7 @@ const Login = () => {
         <Text
           style={{
             color: theme.colors.text,
-            fontSize: 22,
+            fontSize: 24,
             fontWeight: 'bold',
           }}>
           Stellar Teknoloji
@@ -95,7 +96,12 @@ const Login = () => {
         ]}>
         <View style={styles.inputWrapper}>
           {username && (
-            <Text style={[styles.floatingLabel, {color: theme.colors.text}]}>
+            <Text
+              style={[
+                styles.floatingLabel,
+                {textAlign: I18nManager.isRTL ? 'right' : 'left'},
+                {color: theme.colors.text},
+              ]}>
               {t.username}
             </Text>
           )}
@@ -104,7 +110,7 @@ const Login = () => {
             style={[
               styles.input,
               {
-                textAlign: I18nManager.isRTL ? 'right' : 'left',
+                // textAlign: I18nManager.isRTL ? 'right' : 'left',
                 color: theme.colors.text,
                 borderColor: theme.colors.border,
                 backgroundColor: theme.inputColors.background,
@@ -122,7 +128,8 @@ const Login = () => {
             <Text
               style={[
                 styles.floatingLabel,
-                {textAlign: I18nManager.isRTL ? 'right' : 'left'},
+
+                {textAlign: 'center'},
                 {color: theme.colors.text},
               ]}>
               {t.password}
@@ -133,7 +140,7 @@ const Login = () => {
             style={[
               styles.input,
               {
-                textAlign: I18nManager.isRTL ? 'right' : 'left',
+                //textAlign: I18nManager.isRTL ? 'right' : 'left',
                 color: theme.colors.text,
                 borderColor: theme.colors.border,
                 backgroundColor: theme.inputColors.background,
@@ -220,8 +227,6 @@ const styles = StyleSheet.create({
     position: 'relative',
     width: 250,
     marginBottom: 20,
-
-    flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
   },
 
   floatingLabel: {
@@ -229,6 +234,7 @@ const styles = StyleSheet.create({
     top: -25,
     fontSize: 18,
     backgroundColor: 'transparent',
+
     // zIndex: 1,
   },
 
@@ -240,6 +246,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     paddingHorizontal: 10,
     borderRadius: 5,
+    textAlign: 'center',
   },
   label: {
     fontSize: 16,
