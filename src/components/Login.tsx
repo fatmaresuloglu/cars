@@ -56,8 +56,8 @@ const Login = () => {
 
   const [isRTL, setIsRTL] = useState(I18nManager.isRTL);
   const LANGUAGE_KEY = 'appLanguage';
-  const toggleRTL = async (lang: 'ar' | 'tr' | 'en') => {
-    const newRTL = lang === 'ar';
+  const toggleRTL = async (lang: 'sa' | 'tr' | 'en') => {
+    const newRTL = lang === 'sa';
     store.dispatch(setLanguage(lang));
     console.log(isRTL);
     if (isRTL !== newRTL) {
@@ -204,17 +204,17 @@ const Login = () => {
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
               <Text style={{color: theme.colors.text}}>EN</Text>
               <View style={{width: 5}} />
-              <CountryFlag isoCode="GB" size={18} />
+              <CountryFlag isoCode="US" size={18} />
             </View>
           </Button>
           <Button
-            onPress={() => toggleRTL('ar')}
+            onPress={() => toggleRTL('sa')}
             labelStyle={{color: theme.colors.text}}
             contentStyle={{flexDirection: 'row', alignItems: 'center'}}>
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
               <Text style={{color: theme.colors.text}}>AR</Text>
               <View style={{width: 5}} />
-              <CountryFlag isoCode="AR" size={18} />
+              <CountryFlag isoCode="SA" size={18} />
             </View>
           </Button>
         </View>

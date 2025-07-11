@@ -1,11 +1,11 @@
-import ar from './ar.json';
 import en from './en.json';
+import sa from './sa.json';
 import tr from './tr.json';
 
 export const languages = {
   tr,
   en,
-  ar,
+  sa,
 };
 
 export type LanguageCode = keyof typeof languages;
