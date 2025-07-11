@@ -1,3 +1,4 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useNavigation} from '@react-navigation/native';
 import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React, {useState} from 'react';
@@ -15,12 +16,12 @@ import {
 } from 'react-native';
 import CountryFlag from 'react-native-country-flag';
 import {Button, Card} from 'react-native-paper';
-
 import {useAppDispatch, useAppSelector} from '../store/hooks';
+import {setLanguage} from '../store/slices/languageSlice';
 import {useLoginUserMutation} from '../store/slices/userSlice';
+import {store} from '../store/storeIndex';
 import {darkTheme, lightTheme} from '../theme/Theme';
 import {useTranslation} from '../translate/useTranslation';
-import {setLanguageAndDirection} from './denemeRTL';
 
 type RootStackParamList = {
   HomePage: undefined;
@@ -53,6 +54,20 @@ const Login = () => {
       });
   };
 
+  const [isRTL, setIsRTL] = useState(I18nManager.isRTL);
+  const LANGUAGE_KEY = 'appLanguage';
+  const toggleRTL = async (lang: 'ar' | 'tr' | 'en') => {
+    const newRTL = lang === 'ar';
+    store.dispatch(setLanguage(lang));
+    console.log(isRTL);
+    if (isRTL !== newRTL) {
+      I18nManager.allowRTL(newRTL);
+      I18nManager.forceRTL(newRTL);
+      setIsRTL(newRTL);
+    }
+    await AsyncStorage.setItem(LANGUAGE_KEY, lang);
+  };
+
   const isDark = useAppSelector(state => state.theme.isDark);
   const theme = isDark ? darkTheme : lightTheme;
 
@@ -61,7 +76,7 @@ const Login = () => {
       style={[styles.container, {backgroundColor: theme.colors.background}]}>
       <View
         style={{
-          flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
+          flexDirection: I18nManager.isRTL ? 'row' : 'row-reverse',
           alignItems: 'center',
           justifyContent: 'center',
           marginBottom: 20,
@@ -80,7 +95,7 @@ const Login = () => {
             color: theme.colors.text,
             fontSize: 24,
             fontWeight: 'bold',
-            // textAlign: I18nManager.isRTL ? 'right' : 'left',
+            textAlign: I18nManager.isRTL ? 'right' : 'left',
           }}>
           Stellar Teknoloji
         </Text>
@@ -173,7 +188,7 @@ const Login = () => {
             },
           ]}>
           <Button
-            onPress={() => setLanguageAndDirection('tr')}
+            onPress={() => toggleRTL('tr')}
             labelStyle={{color: theme.colors.text}}
             contentStyle={{flexDirection: 'row', alignItems: 'center'}}>
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -183,7 +198,7 @@ const Login = () => {
             </View>
           </Button>
           <Button
-            onPress={() => setLanguageAndDirection('en')}
+            onPress={() => toggleRTL('en')}
             labelStyle={{color: theme.colors.text}}
             contentStyle={{flexDirection: 'row', alignItems: 'center'}}>
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -193,7 +208,7 @@ const Login = () => {
             </View>
           </Button>
           <Button
-            onPress={() => setLanguageAndDirection('ar')}
+            onPress={() => toggleRTL('ar')}
             labelStyle={{color: theme.colors.text}}
             contentStyle={{flexDirection: 'row', alignItems: 'center'}}>
             <View style={{flexDirection: 'row', alignItems: 'center'}}>

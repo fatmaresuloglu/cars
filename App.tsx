@@ -2,7 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import {Button, SafeAreaView} from 'react-native';
+import {Button, I18nManager, SafeAreaView} from 'react-native';
 import {Provider} from 'react-redux';
 
 import {useEffect} from 'react';
@@ -26,10 +26,12 @@ const AppContent = () => {
   useEffect(() => {
     const loadLanguage = async () => {
       const lang = await AsyncStorage.getItem('appLanguage');
-      if (lang) {
-        store.dispatch(setLanguage(lang as 'tr' | 'en' | 'ar'));
-      }
+      const isRTL = lang === 'ar';
+      I18nManager.allowRTL(isRTL);
+      I18nManager.forceRTL(isRTL);
+      store.dispatch(setLanguage((lang as 'tr' | 'en' | 'ar') || 'tr'));
     };
+
     loadLanguage();
   }, []);
 
