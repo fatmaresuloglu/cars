@@ -24,6 +24,7 @@ import {darkTheme, lightTheme} from '../theme/Theme';
 import {useTranslation} from '../translate/useTranslation';
 
 type RootStackParamList = {
+  Main: undefined;
   HomePage: undefined;
 };
 
@@ -47,7 +48,7 @@ const Login = () => {
       .unwrap()
       .then((response: any) => {
         if (response && response.username) {
-          navigation.navigate('HomePage');
+          navigation.navigate('Main');
         } else {
           Alert.alert(t.Warning, t.WarningMessage2);
         }

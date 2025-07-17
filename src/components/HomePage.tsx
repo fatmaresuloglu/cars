@@ -6,6 +6,7 @@ import {Card} from 'react-native-paper';
 import {useAppSelector} from '../store/hooks';
 import {darkTheme, lightTheme} from '../theme/Theme';
 import {useTranslation} from '../translate/useTranslation';
+
 const HomePage = () => {
   const navigation = useNavigation<NativeStackNavigationProp<any>>();
   const isDark = useAppSelector(state => state.theme.isDark);
