@@ -3,23 +3,26 @@
     {
       "id": "1",
       "username": "user1",
-      "password": "1234"
+      "password": "1234",
+      "name": "fatma",
+      "tel": "05xxxxxxxxx",
+      "email": "fatos@example.com"
     },
     {
       "id": "2",
       "username": "user2",
-      "password": "5678"
+      "password": "5678",
+      "name": "fatma",
+      "tel": "05xxxxxxxxx",
+      "email": "fatos@example.com"
     },
     {
       "id": "3",
       "username": "user3",
-      "password": "1235"
-    },
-    {
-      "id": "aef3"
-    },
-    {
-      "id": "8564"
+      "password": "1235",
+      "name": "fatma",
+      "tel": "05xxxxxxxxx",
+      "email": "fatos@example.com"
     }
   ]
 }

@@ -8,7 +8,6 @@ import {
   I18nManager,
   Image,
   SafeAreaView,
-  StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
@@ -20,12 +19,13 @@ import {useAppDispatch, useAppSelector} from '../store/hooks';
 import {setLanguage} from '../store/slices/languageSlice';
 import {useLoginUserMutation} from '../store/slices/userSlice';
 import {store} from '../store/storeIndex';
-import {darkTheme, lightTheme} from '../theme/Theme';
+import {darkTheme, lightTheme, styles} from '../theme/Theme';
 import {useTranslation} from '../translate/useTranslation';
 
 type RootStackParamList = {
-  Main: undefined;
-  HomePage: undefined;
+  //Main: undefined;
+  //HomePage: undefined;
+  ProfilePage: undefined;
 };
 
 const Login = () => {
@@ -48,7 +48,7 @@ const Login = () => {
       .unwrap()
       .then((response: any) => {
         if (response && response.username) {
-          navigation.navigate('Main');
+          navigation.navigate('ProfilePage');
         } else {
           Alert.alert(t.Warning, t.WarningMessage2);
         }
@@ -223,88 +223,5 @@ const Login = () => {
     </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  card: {
-    margin: 10,
-    padding: 20,
-    borderWidth: 4,
-    width: 300,
-    alignItems: 'center',
-    height: 350,
-  },
-  inputWrapper: {
-    position: 'relative',
-    width: 250,
-    marginBottom: 20,
-  },
-
-  floatingLabel: {
-    position: 'absolute',
-    top: -25,
-    fontSize: 18,
-    backgroundColor: 'transparent',
-  },
-
-  input: {
-    height: 45,
-    width: 250,
-    borderWidth: 2,
-    fontSize: 16,
-    marginBottom: 10,
-    paddingHorizontal: 10,
-    borderRadius: 5,
-    textAlign: 'center',
-  },
-  label: {
-    fontSize: 16,
-    height: 20,
-    marginBottom: 10,
-    textAlign: I18nManager.isRTL ? 'right' : 'left',
-  },
-
-  button: {
-    marginTop: 5,
-    marginBottom: 20,
-    height: 40,
-
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'blue',
-    color: 'white',
-    flexDirection: 'row',
-    borderRadius: 20,
-  },
-  buttonText: {
-    textAlign: 'center',
-    padding: 10,
-    color: '#fff',
-    fontWeight: 'bold',
-    fontSize: 16,
-    marginLeft: 10,
-  },
-  buttonDisabled: {
-    backgroundColor: '#a5a5a5',
-    marginBottom: 20,
-    height: 40,
-  },
-  buttonLanguage: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    marginBottom: 20,
-    height: 40,
-    borderColor: 'black',
-    borderWidth: 2,
-    borderRadius: 10,
-    color: 'black',
-    backgroundColor: 'white',
-  },
-});
 
 export default Login;

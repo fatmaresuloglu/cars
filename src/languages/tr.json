@@ -7,5 +7,11 @@
   "Warning": "Uyarı",
   "Error": "Hata",
   "WarningMessage1": "Kullanıcı adı ve şifre boş olamaz.",
-  "WarningMessage2": "Kullanıcı adı veya şifre yanlış."
+  "WarningMessage2": "Kullanıcı adı veya şifre yanlış.",
+  "tel": "Telefon",
+  "email": "E-Posta",
+  "ProfilePage": "Kullanıcı Profili",
+  "save": "Kaydet",
+  "change_photo": "Fotoğrafı Değiştir",
+  "name": "Ad Soyad"
 }

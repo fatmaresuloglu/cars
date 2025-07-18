@@ -6,6 +6,7 @@ import com.facebook.react.ReactActivityDelegate
 import com.facebook.react.ReactRootView
 import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView
 import com.facebook.react.modules.i18nmanager.I18nUtil
+import com.oblador.vectoricons.VectorIconsPackage;
 
 class MainActivity : ReactActivity() {
     override fun getMainComponentName(): String = "cars"
@@ -31,6 +32,13 @@ class MainActivity : ReactActivity() {
             }
         }
     }
+    @Override
+  protected List<ReactPackage> getPackages() {
+    return Arrays.<ReactPackage>asList(
+      new MainReactPackage()
+      , new VectorIconsPackage()
+    );
+  }
 }
 
 

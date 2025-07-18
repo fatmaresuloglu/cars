@@ -16,8 +16,12 @@ project.ext.react = [
   enableHermes: false, 
 ]
 
+project.ext.vectoricons = [
+    iconFontNames: ['Feather.ttf' ] // Specify font files
+]
 
-apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
+
    //   The root of your project, i.e. where "package.json" lives. Default is '../..'
    // root = file("../../")
    //   The folder where the react-native NPM package is. Default is ../../node_modules/react-native
@@ -131,6 +135,7 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+    implementation project(':react-native-vector-icons')
 }
 
 

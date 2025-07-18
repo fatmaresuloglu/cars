@@ -7,5 +7,11 @@
   "Warning": "Warning",
   "Error": "Error",
   "WarningMessage1": "Username and password cannot be empty.",
-  "WarningMessage2": "Username or password is incorrect."
+  "WarningMessage2": "Username or password is incorrect.",
+  "tel": "Phone",
+  "email": "Email",
+  "ProfilePage": "User Profile",
+  "save": "Save",
+  "change_photo": "Change Photo",
+  "name": "Full Name"
 }
