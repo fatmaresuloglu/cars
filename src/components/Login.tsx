@@ -46,8 +46,9 @@ const Login = () => {
 
     loginUser({username: username.trim(), password: password.trim()})
       .unwrap()
-      .then((response: any) => {
-        if (response && response.username) {
+      .then(async (response: any) => {
+        if (response && response.id && response.username) {
+          await AsyncStorage.setItem('userId', response.id.toString());
           navigation.navigate('ProfilePage');
         } else {
           Alert.alert(t.Warning, t.WarningMessage2);
