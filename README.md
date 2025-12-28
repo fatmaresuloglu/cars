@@ -1,41 +1,32 @@
-# 🚗 Car Manager - Advanced React Native Application
+# ⛽ FuelStation IQ - Corporate Fuel Operations & Trade Manager
 
-A performance-oriented vehicle management application built with modern mobile development practices. This project focuses on high user experience by leveraging the advanced features of **Redux Toolkit Query**.
+A high-performance **React Native (Enterprise-Grade)** application designed for corporate fuel station networks to monitor real-time operations, manage shift data, and track sales transactions with high precision.
 
-## 🛠 Technical Stack & Architecture
-* **React Native & TypeScript:** Ensuring type safety and a robust code structure.
-* **Redux Toolkit Query (RTK Query):** Advanced data fetching, automated caching, and state synchronization.
-* **Optimistic Updates:** Enhances UX by updating the UI immediately before the server responds, with a built-in **Undo/Rollback** mechanism in case of server errors.
-* **Advanced State Management:** Efficient management of both global UI state and asynchronous server state.
+## 🏗 System Architecture & Security
+This project is built for professional environments where data integrity and security are paramount:
+* **Secure Authentication:** Implemented a robust **JWT (JSON Web Token)** based auth flow.
+* **Token Management:** Secured access and refresh tokens using **AsyncStorage** with industry-standard security practices.
+* **Live Data Sync:** Seamless integration with RESTful APIs to handle real-time corporate data streams.
 
-## ✨ Key Features
-* **High Performance:** Minimized API calls through efficient local caching and cache invalidation strategies.
-* **Robust Error Handling:** Custom error transformation and centralized error handling to provide meaningful user feedback.
-* **Modern & Dynamic UI:** A seamless profile and vehicle management system designed for responsiveness.
-* **Manual Cache Manipulation:** Professional use of `api.util.updateQueryData` for real-time UI consistency.
+## 🛠 Technical Stack
+* **Framework:** React Native & TypeScript (Strictly typed for financial data accuracy).
+* **State & Cache:** **Redux Toolkit Query (RTK Query)** for advanced caching, reducing unnecessary network load for field operations.
+* **Data Handling:** **Optimistic Updates** with automated rollback mechanism to ensure UI consistency during network fluctuations.
+* **Localization (i18n):** Full support for internationalization, including **RTL (Right-to-Left)** languages and dynamic **Dark/Light Theme** switching.
 
-## 📸 Screenshots
-| Profile Management | Vehicle List | Update Logic |
-|---|---|---|
-| (Add screenshot) | (Add screenshot) | (Add screenshot) |
-
-## 🚀 Getting Started
-
-### Prerequisites
-* Node.js & npm/yarn
-* React Native Development Environment
-* [JSON-Server](https://www.npmjs.com/package/json-server) (for mock backend)
+## ✨ Business-Critical Features
+* **Operation Monitoring:** Real-time tracking of fuel sales and inventory.
+* **Shift Management:** Digitalized shift data entry and reporting for station employees.
+* **Corporate UX:** High-speed data rendering for large transaction lists.
+* **Global Readiness:** Multi-language and multi-theme support tailored for global station networks.
 
 ## 📸 Screenshots
 
-| Authentication (Light/Dark) | Navigation & Menu | User Management |
+| Authentication & Theme | Navigation & Operations | Shift & User Management |
 |:---:|:---:|:---:|
 | <img src="login.png" width="200" /> <br> <img src="dark_login.png" width="200" /> | <img src="drawer.png" width="200" /> | <img src="user_update.png" width="200" /> <br> <img src="alert.png" width="200" /> |
 
-
-### Installation
-1. Clone the repository:
-   ```sh
-   git clone [https://github.com/fatmaresuloglu/cars.git](https://github.com/fatmaresuloglu/cars.git)
-
-
+## 🚀 Technical Highlights for Recruiters
+* **JWT Auth:** Managing complex session states securely.
+* **Performance:** Achieved near-instant UI updates using RTK Query's manual cache manipulation.
+* **Architecture:** Clean separation of concerns between UI components and the API layer.
