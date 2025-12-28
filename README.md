@@ -26,6 +26,13 @@ A performance-oriented vehicle management application built with modern mobile d
 * React Native Development Environment
 * [JSON-Server](https://www.npmjs.com/package/json-server) (for mock backend)
 
+## 📸 Screenshots
+
+| Authentication (Light/Dark) | Navigation & Menu | User Management |
+|:---:|:---:|:---:|
+| <img src="login.png" width="200" /> <br> <img src="dark_login.png" width="200" /> | <img src="drawer.png" width="200" /> | <img src="user_update.png" width="200" /> <br> <img src="alert.png" width="200" /> |
+
+
 ### Installation
 1. Clone the repository:
    ```sh
