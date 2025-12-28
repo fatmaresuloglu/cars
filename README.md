@@ -22,8 +22,7 @@ This project is built for professional environments where data integrity and sec
 
 ## 📸 Screenshots
 
-
-
+|:---:|:---:|:---:|
 | <img src="login.png" width="200" /> <br> <img src="dark_login.png" width="200" /> | <img src="drawer.png" width="200" /> | <img src="user_update.png" width="200" /> <br> <img src="alert.png" width="200" /> |
 
 ## 🚀 Technical Highlights for Recruiters
